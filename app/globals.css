@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  color-scheme: dark;
+  --font-grotesk: "Avenir Next", "Segoe UI", system-ui, -apple-system,
+    sans-serif;
+  --font-plex-mono: "SF Mono", "Cascadia Code", "JetBrains Mono", Menlo,
+    Consolas, ui-monospace, monospace;
+}
+
+body {
+  background-color: #0b0e14;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.035) 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background: #37d6a7;
+  color: #0b0e14;
+}
+
+/* Perforated / torn paper edge for the receipt panel, evoking a thermal
+   printout without relying on an image asset. */
+.receipt-edge-top {
+  -webkit-mask-image: radial-gradient(
+    circle at 10px 0,
+    transparent 9px,
+    black 10px
+  );
+  -webkit-mask-size: 20px 20px;
+  -webkit-mask-repeat: repeat-x;
+  mask-image: radial-gradient(circle at 10px 0, transparent 9px, black 10px);
+  mask-size: 20px 20px;
+  mask-repeat: repeat-x;
+}
+
+.receipt-edge-bottom {
+  -webkit-mask-image: radial-gradient(
+    circle at 10px 20px,
+    transparent 9px,
+    black 10px
+  );
+  -webkit-mask-size: 20px 20px;
+  -webkit-mask-repeat: repeat-x;
+  mask-image: radial-gradient(circle at 10px 20px, transparent 9px, black 10px);
+  mask-size: 20px 20px;
+  mask-repeat: repeat-x;
+}
+
+.focus-ring {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid #37d6a7;
+  outline-offset: 2px;
+}
